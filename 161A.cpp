@@ -19,20 +19,23 @@ int main (){
         cin >> x;
         v2.push_back(x);
     }
-    int i=v2.size()-1;
-    while(i>=0){
-        int j = v1.size()-1;
-        cout << v2[i] << " " << v1[j] << endl;
-        if(v2[i]-x==v1[j] || v2[i]+y==v1[j]){
-            vans.push_back(make_pair(i+1, j+1));
-            v1.pop_back();
-            i--;
-            if(v1.empty())break;
+    int j=0, i=0;
+    while(i!=v2.size()){
+        if(v2[i]-y<=v1[j] && v2[i]+x>=v1[j]){
+            vans.push_back(make_pair(j+1, i+1));
+            j++;
+            if(j==v1.size())break;
+            i++;
+        }else if(v2[i]-y<v1[j] && v2[i]+x<v1[j])i++;
+        else{
+            j++;
+            if(j==v1.size())break;
         }
-        else i--;
     }
     cout << vans.size() << endl;
-    for(int i=0; i<vans.size(); i++){
-        cout << vans[i].first << " " << vans[i].second << endl;
+    if(vans.size()!=0){
+        for(int i=0; i<vans.size(); i++){
+            cout << vans[i].first << " " << vans[i].second << endl;
+        }
     }
 }
