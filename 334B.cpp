@@ -8,10 +8,10 @@ int main (){
     freopen("output.txt","w",stdout);
     int n;
     cin >> n;
-    vector<int> v;
+    vector<pair<int,int>> v;
     for(int i=0; i<n; i++){
-        int x;
-        cin >> x;
-        v.push_back(x);
+        int x,y;
+        cin >> x >> y;
+        v.push_back(make_pair(x,y));
     }
 }
