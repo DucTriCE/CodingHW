@@ -15,7 +15,7 @@ int main (){
             string s;
             cin >> s;
             if(s[0]=='N'){
-                cout 
+            
             }
         }
     }
