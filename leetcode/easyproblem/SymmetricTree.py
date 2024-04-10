@@ -8,7 +8,7 @@ def isSameTreeSymmetric(p: Node, q:Node) -> bool:
     if p is None and q is None:
         return True
     if p is not None and q is not None:
-        return (p.val==q.val) and (isSameTree(p.left, q.right)) and (isSameTree(p.right, q.left))
+        return (p.val==q.val) and (isSameTreeSymmetric(p.left, q.right)) and (isSameTreeSymmetric(p.right, q.left))
     return False
 
 def isSymmetric(root) -> bool:
