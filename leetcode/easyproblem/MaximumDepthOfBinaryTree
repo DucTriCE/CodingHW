@@ -5,17 +5,17 @@ class TreeNode:
         self.left = left
         self.right = right
 
-    def inorderTraversal(self, root):
-        lst = []
-        def inorder(root):
-            if root:
-                inorder(root.left)
-                lst.append(root.val)
-                inorder(root.right)
-            else:
-                return []
-        inorder(root)
-        return lst
+def maxDepth(root):
+    if root is None:
+        return 0
+    else:
+        lDepth = maxDepth(root.left)
+        rDepth = maxDepth(root.right)
+        if lDepth > rDepth:
+            return lDepth+1
+        else:
+            return rDepth+1
+
 
 if __name__ == "__main__":
     root = TreeNode(1)
@@ -25,5 +25,6 @@ if __name__ == "__main__":
     root.left.right = TreeNode(5)
     root.right.left = TreeNode(6)
     root.right.right = TreeNode(7)
-    lst = root.inorderTraversal(root)
-    print(lst)
+    root.right.right.left = TreeNode(9)
+    print(maxDepth(root))
+    
