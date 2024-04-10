@@ -4,6 +4,14 @@ class Node:
         self.left = left
         self.right = right
 
+# def isSameTree1(p, q) -> bool:
+#     if p is None and q is None:
+#         return True
+#     if p and q:
+#         return (p.val == q.val) and (isSameTree1(p.left, q.left)) and (isSameTree1(p.right, q.right))
+#     return False
+
+
 def isSameTree(p, q) -> bool:
     if p is None and q is None:
         return True
