@@ -4,20 +4,20 @@ class Node:
         self.right = None
         self.val = key
  
-    def insert(self, data):
-      if self.data:
-         if data < self.data:
-            if self.left is None:
-               self.left = Node(data)
+    def insert(self, data): 
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
             else:
-               self.left.insert(data)
-         elif data > self.data:
-               if self.right is None:
-                  self.right = Node(data)
-               else:
-                  self.right.insert(data)
-      else:
-         self.data = data
+                self.left.insert(data)
+        elif data > self.data:
+            if self.right is None:
+                self.right = Node(data)
+            else:
+                self.right.insert(data)
+        else:
+            self.data = data
 
 def printInorder(root):
     if root:
