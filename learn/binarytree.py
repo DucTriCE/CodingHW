@@ -4,7 +4,21 @@ class Node:
         self.right = None
         self.val = key
  
- 
+    def insert(self, data):
+      if self.data:
+         if data < self.data:
+            if self.left is None:
+               self.left = Node(data)
+            else:
+               self.left.insert(data)
+         elif data > self.data:
+               if self.right is None:
+                  self.right = Node(data)
+               else:
+                  self.right.insert(data)
+      else:
+         self.data = data
+
 def printInorder(root):
     if root:
         printInorder(root.left)
@@ -22,6 +36,7 @@ def printPostorder(root):
         printPostorder(root.left)
         printPostorder(root.right)
         print(root.val, end=" "),
+
 
 # Driver code
 if __name__ == "__main__":
