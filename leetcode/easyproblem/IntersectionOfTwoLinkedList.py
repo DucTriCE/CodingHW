@@ -4,17 +4,15 @@ class ListNode:
         self.next = next
 
 def getIntersectionNode(headA:ListNode, headB: ListNode):
+    if headA is None or headB is None:
+        return None
     curA = headA
     curB = headB
-    while curA:
-        curA.val = None
-        curA = curA.next
-    while curB:
-        if curB.val==None:
-            return curB
-        else:
-            curB = curB.next
-    return None
+    while curA is not curB:
+        curA = headB if curA is None else curA.next
+        curB = headA if curB is None else curB.next
+    return curA
+    
 
 if __name__ == '__main__':
     # Create nodes
