@@ -14,6 +14,17 @@ def removeElements(head: ListNode, val: int):
         else:
             cur = cur.next
     return dummy.next
+    # new_list = ListNode(-1)
+    # curN = new_list
+    # while head:
+    #     if head.val == val:
+    #         head = head.next
+    #     else:
+    #         curN.next = head
+    #         head = head.next
+    #         curN = curN.next
+    # curN.next = None
+    # return new_list.next
 
 
 if __name__ == '__main__':

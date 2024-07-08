@@ -10,7 +10,6 @@ def deleteDuplicates(head: ListNode):
 
     while head != None:
         if head.val not in st:
-            print("ADD ", head.val)
             st.add(head.val)
             cur.next=head
             head=head.next
@@ -19,12 +18,24 @@ def deleteDuplicates(head: ListNode):
             head=head.next
     cur.next = None
     return tmp.next
+    # nodup_list = ListNode(-101)
+    # curN = nodup_list
+    # while head:
+    #     while head.val == curN.val:
+    #         if head.next is not None:
+    #             head = head.next
+    #         else:
+    #             curN.next = None
+    #             return nodup_list.next
+    #     curN.next = head
+    #     curN = curN.next
+    # return nodup_list.next
 
 
 if __name__ == '__main__':
     # Create nodes
     lst1 = ListNode(1)
-    lst1_1 = ListNode(2)
+    lst1_1 = ListNode(1)
     lst1_2 = ListNode(2)
     lst1_3 = ListNode(2)
     lst1_4 = ListNode(4)
