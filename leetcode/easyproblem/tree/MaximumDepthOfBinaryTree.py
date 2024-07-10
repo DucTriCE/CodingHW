@@ -16,7 +16,11 @@ def maxDepth(root):
         else:
             return rDepth+1
 
-
+def maxdepthII(root):
+    if not root:
+        return 0
+    return max(maxdepthII(root.left), maxdepthII(root.right))+1
+        
 if __name__ == "__main__":
     root = TreeNode(1)
     root.left = TreeNode(2)
