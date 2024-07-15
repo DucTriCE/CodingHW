@@ -1,5 +1,5 @@
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: list[int]) -> int:
         minPrice, maxProfit  = 10001, 0
         for price in prices:
             if price < minPrice:
@@ -9,3 +9,5 @@ class Solution:
         return maxProfit
 
 
+if __name__ == '__main__':
+    pass
