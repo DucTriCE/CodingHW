@@ -11,6 +11,7 @@ for i in range(len(numbers)-1):
             print(i+1, j+1)
             exit()
 '''
+
 i = 0
 j = len(numbers)-1
 while i<j:
@@ -21,3 +22,16 @@ while i<j:
         j-=1
     else:
         i+=1
+
+# Extra case if the list is not sorted
+'''
+st = set()
+index_map = {}
+for i in range(len(numbers)):
+    value = target - numbers[i]
+    if value not in st:
+        st.add(numbers[i])
+        index_map[numbers[i]] = i
+    else:
+        print(index_map[value]+1, i+1)
+'''
